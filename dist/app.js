@@ -3,6 +3,16 @@ const form = document.querySelector("#todo-form");
 const input = document.querySelector("#todo-input");
 const list = document.querySelector("#todo-list");
 let tasks = [];
+function saveTasks() {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+window.addEventListener("load", () => {
+    const saved = localStorage.getItem("tasks");
+    if (saved) {
+        tasks = JSON.parse(saved);
+        renderTasks();
+    }
+});
 function renderTasks() {
     list.innerHTML = "";
     tasks.forEach(task => {
@@ -12,6 +22,7 @@ function renderTasks() {
         btn.textContent = "Excluir";
         btn.onclick = () => {
             tasks = tasks.filter(t => t.id !== task.id);
+            saveTasks();
             renderTasks();
         };
         li.appendChild(btn);
@@ -28,6 +39,7 @@ form.addEventListener("submit", (e) => {
         content
     };
     tasks.push(task);
+    saveTasks();
     renderTasks();
     input.value = "";
 });

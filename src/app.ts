@@ -9,6 +9,18 @@ const list = document.querySelector("#todo-list") as HTMLUListElement;
 
 let tasks: Task[] = [];
 
+function saveTasks() {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
+window.addEventListener("load", () => {
+    const saved = localStorage.getItem("tasks");
+    if(saved) {
+        tasks = JSON.parse(saved);
+        renderTasks();
+    }
+});
+
 function renderTasks() {
     list.innerHTML = "";
 
@@ -20,6 +32,7 @@ function renderTasks() {
         btn.textContent = "Excluir";
         btn.onclick = () => {
             tasks = tasks.filter(t => t.id !== task.id);
+            saveTasks();
             renderTasks();
         };
 
@@ -39,6 +52,7 @@ form.addEventListener("submit", (e) => {
     };
 
     tasks.push(task);
+    saveTasks();
     renderTasks();
     input.value = "";
 })
