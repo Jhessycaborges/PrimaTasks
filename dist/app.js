@@ -33,6 +33,7 @@ function renderTasks() {
         li.appendChild(span);
         li.appendChild(btn);
         list.appendChild(li);
+        updateTaskCounter();
     });
 }
 form.addEventListener("submit", (e) => {
@@ -78,3 +79,17 @@ window.addEventListener("load", () => {
         toggleDark.textContent = "🌙 Modo Escuro";
     }
 });
+function updateTaskCounter() {
+    const counter = document.querySelector("#task-counter");
+    const pendingCount = tasks.filter(task => !task.done).length;
+    const totalCount = tasks.length;
+    if (totalCount === 0) {
+        counter.textContent = "Nenhuma tarefa por aqui 😴";
+    }
+    else if (pendingCount === 0) {
+        counter.textContent = "🎉 Todas as tarefas concluídas!";
+    }
+    else {
+        counter.textContent = `Você tem ${pendingCount} tarefa${pendingCount > 1 ? "s" : ""} pendente${pendingCount > 1 ? "s" : ""}`;
+    }
+}
