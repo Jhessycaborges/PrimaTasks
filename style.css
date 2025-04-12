@@ -179,4 +179,16 @@ body.dark #toggle-dark:hover {
   li button {
     align-self: flex-end;
   }
-}  
+}
+
+#task-counter {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+  text-align: center;
+}
+
+body.dark #task-counter {
+  color: #ccc;
+}
