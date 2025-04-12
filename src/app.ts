@@ -1,15 +1,15 @@
 interface Task {
-    id: number;
-    content: string;
-    done: boolean;
+  id: number;
+  content: string;
+  done: boolean;
 }
-  
+
 const form = document.querySelector("#todo-form") as HTMLFormElement;
 const input = document.querySelector("#todo-input") as HTMLInputElement;
 const list = document.querySelector("#todo-list") as HTMLUListElement;
 const clearAllBtn = document.querySelector("#clear-all") as HTMLButtonElement;
 const toggleDark = document.querySelector("#toggle-dark") as HTMLButtonElement;
-  
+
 let tasks: Task[] = [];
 
 function saveTasks(): void {
@@ -21,13 +21,14 @@ function renderTasks(): void {
 
   tasks.forEach((task) => {
     const li = document.createElement("li");
-    li.textContent = task.content;
 
+    const span = document.createElement("span");
+    span.textContent = task.content;
     if (task.done) {
-      li.classList.add("done");
+      span.classList.add("done");
     }
 
-    li.onclick = () => {
+    span.onclick = () => {
       task.done = !task.done;
       saveTasks();
       renderTasks();
@@ -42,6 +43,7 @@ function renderTasks(): void {
       renderTasks();
     };
 
+    li.appendChild(span);
     li.appendChild(btn);
     list.appendChild(li);
   });

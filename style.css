@@ -9,11 +9,11 @@ body {
 }
   
 main {
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    width: 300px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
   
 form {
@@ -41,6 +41,7 @@ li {
   border-radius: 4px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 button {
@@ -70,12 +71,6 @@ li button:hover {
   background-color: #b02a37;
 }
 
-/* Corrige botão riscado */
-li.done button {
-  text-decoration: none !important;
-  color: white !important;
-}
-
 #clear-all {
   margin-top: 15px;
   width: 100%;
@@ -97,10 +92,10 @@ li.done button {
   font-weight: bold;
 }
 
-.done {
-  text-decoration: line-through;
-  color: #808080;
-  position: relative;
+span.done {
+    text-decoration: line-through;
+    color: #808080;
+    position: relative;
 }
 
 /* Modo Dark */
@@ -184,4 +179,4 @@ body.dark #toggle-dark:hover {
   li button {
     align-self: flex-end;
   }
-}
+}  

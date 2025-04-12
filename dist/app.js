@@ -12,11 +12,12 @@ function renderTasks() {
     list.innerHTML = "";
     tasks.forEach((task) => {
         const li = document.createElement("li");
-        li.textContent = task.content;
+        const span = document.createElement("span");
+        span.textContent = task.content;
         if (task.done) {
-            li.classList.add("done");
+            span.classList.add("done");
         }
-        li.onclick = () => {
+        span.onclick = () => {
             task.done = !task.done;
             saveTasks();
             renderTasks();
@@ -29,6 +30,7 @@ function renderTasks() {
             saveTasks();
             renderTasks();
         };
+        li.appendChild(span);
         li.appendChild(btn);
         list.appendChild(li);
     });
