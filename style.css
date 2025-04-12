@@ -1,13 +1,13 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Inter', sans-serif;
     background: #f0f2f5;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     padding: 0 10px;
-  }  
-
+}
+  
 main {
     background: #ffffff;
     padding: 20px;
@@ -15,208 +15,173 @@ main {
     width: 300px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-
+  
 form {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
 }
 
 input {
-    flex: 1;
-    padding: 8px;
-    border: 1px solid #9c9c9c;
-    border-radius: 5px;
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #9c9c9c;
+  border-radius: 5px;
 }
 
 ul {
-    list-style: none;
-    padding: 0;
-    margin-top: 20px;
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
 }
 
 li {
-    background: #e1e1e1;
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 4px;
-    display: flex;
-    justify-content: space-between;
+  background: #e1e1e1;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
 }
 
 button {
-    padding: 8px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
 }
 
 form button {
-    background-color: #007bff;
-    color: white;
+  background-color: #007bff;
+  color: white;
 }
 
 form button:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }
 
 li button {
-    margin-left: 10px;
-    background-color: #dc3545;
-    color: white;
+  margin-left: 10px;
+  background-color: #dc3545;
+  color: white;
 }
 
 li button:hover {
-    background-color: #b02a37;
+  background-color: #b02a37;
+}
+
+/* Corrige botão riscado */
+li.done button {
+  text-decoration: none;
+  color: white;
 }
 
 #clear-all {
-    margin-top: 15px;
-    width: 100%;
-    background-color: #ff4d4d;
-    color: white;
-    font-weight: bold;
+  margin-top: 15px;
+  width: 100%;
+  background-color: #ff4d4d;
+  color: white;
+  font-weight: bold;
 }
 
 #clear-all:hover {
-    background-color: #ff1a1a;
+  background-color: #ff1a1a;
 }
 
 #toggle-dark {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 15px;
-    background-color: #333;
-    color: white;
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  background-color: #333;
+  color: white;
+  font-weight: bold;
 }
 
 .done {
-    text-decoration: line-through;
-    color: #808080;
-    position: relative;
+  text-decoration: line-through;
+  color: #808080;
+  position: relative;
 }
 
 /* Modo Dark */
 body.dark {
-    background-color: #1e1e1e;
-    color: #f5f5f5;
+  background-color: #1e1e1e;
+  color: #f5f5f5;
 }
 
 body.dark main {
-    background-color: #2a2a2a;
+  background-color: #2a2a2a;
 }
 
 body.dark input {
-    background-color: #3a3a3a;
-    color: white;
-    border: 1px solid #555;
+  background-color: #3a3a3a;
+  color: white;
+  border: 1px solid #555;
 }
 
 body.dark li {
-    background-color: #3a3a3a;
+  background-color: #3a3a3a;
 }
 
 body.dark li button {
-    background-color: #d9534f;
+  background-color: #d9534f;
 }
 
 body.dark li button:hover {
-    background-color: #c9302c;
+  background-color: #c9302c;
 }
 
 body.dark #toggle-dark {
-    background-color: #ffffff;
-    color: #000000;
+  background-color: #ffffff;
+  color: #000000;
 }
 
 body.dark #toggle-dark:hover {
-    background-color: #dddddd;
+  background-color: #dddddd;
 }
 
+/* Responsividade unificada */
 @media (max-width: 480px) {
-    body {
-      padding: 20px;
-    }
-  
-    main {
-      width: 100%;
-      padding: 15px;
-    }
-  
-    form {
-      flex-direction: column;
-    }
-  
-    input {
-      width: 100%;
-      padding: 10px;
-      font-size: 16px;
-    }
-  
-    form button {
-      width: 100%;
-      padding: 10px;
-      font-size: 16px;
-    }
-  
-    #toggle-dark,
-    #clear-all {
-      font-size: 16px;
-      padding: 10px;
-    }
-  
-    li {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 10px;
-    }
-  
-    li button {
-      align-self: flex-end;
-    }
-}
+  body {
+    padding: 20px 10px;
+  }
 
-@media (max-width: 480px) {
-    body {
-      padding: 20px 10px;
-    }
-  
-    main {
-      width: 100%;
-      max-width: 320px;
-      padding: 15px;
-    }
-  
-    form {
-      flex-direction: column;
-    }
-  
-    input {
-      width: 100%;
-      padding: 10px;
-      font-size: 16px;
-      box-sizing: border-box;
-    }
-  
-    form button {
-      width: 100%;
-      padding: 10px;
-      font-size: 16px;
-    }
-  
-    #toggle-dark,
-    #clear-all {
-      font-size: 16px;
-      padding: 10px;
-    }
-  
-    li {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 10px;
-    }
-  
-    li button {
-      align-self: flex-end;
-    }
+  main {
+    width: 100%;
+    max-width: 320px;
+    padding: 15px;
+  }
+
+  form {
+    flex-direction: column;
+  }
+
+  input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+
+  form button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  #toggle-dark,
+  #clear-all {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  li button {
+    align-self: flex-end;
+  }
 }
-  
