@@ -38,3 +38,16 @@ li {
     display: flex;
     justify-content: space-between;
 }
+
+.done {
+    text-decoration: line-through;
+    color: gray;
+    position: relative;
+  }
+  
+  .done::before {
+    content: "✔️ ";
+    position: absolute;
+    left: -25px;
+  }
+  
