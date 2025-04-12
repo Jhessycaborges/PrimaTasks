@@ -72,8 +72,8 @@ li button:hover {
 
 /* Corrige botão riscado */
 li.done button {
-  text-decoration: none;
-  color: white;
+  text-decoration: none !important;
+  color: white !important;
 }
 
 #clear-all {
