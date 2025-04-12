@@ -41,13 +41,12 @@ li {
 
 .done {
     text-decoration: line-through;
-    color: gray;
+    color: #808080;
     position: relative;
   }
   
   .done::before {
-    content: "✔️ ";
+    content: "✔️";
     position: absolute;
-    left: -25px;
-  }
-  
+    left: -20px;
+}  
